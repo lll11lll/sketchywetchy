@@ -1,0 +1,26 @@
+
+
+
+.mainContainer {
+    display: flex;
+    border: solid 3px black;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 800px;
+    max-height: 800px;
+    display: flex;
+    border: solid 40px red;
+    box-shadow: 0 0 0 10px black; /* Add a black border 10px outside the red border */
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 0px;
+
+}
+
+body {
+    background-color: coral;
+}
