@@ -1,9 +1,10 @@
 
-
+h1 {
+    text-align: center;
+}
 
 .mainContainer {
     display: flex;
-    border: solid 3px black;
     align-items: center;
     justify-content: center;
 }
@@ -23,4 +24,8 @@
 
 body {
     background-color: coral;
+}
+
+.blackout {
+    background-color: black;
 }
