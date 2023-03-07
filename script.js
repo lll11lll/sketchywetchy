@@ -2,6 +2,12 @@
 // 03/06/2023
 // Etch-A-Sketch skript
 
+// 1 Make the color the same color as the color picker and how they draw onto the grid
+// 2 Allow the use to change the board size
+// 3 Allow the user to reset the board (Making all tiles whited)
+
+// On the right side we could add input boxes and a submit buttons that stores the art in a database somehow.
+
 // Creating the grid for etch-a-sketch
 
 const mainCont = document.querySelector('.container');
@@ -11,10 +17,12 @@ const mainCont = document.querySelector('.container');
 // gridBox.textContent = 'This is a box!'
 //gridBox.style.cssText = 'justify-content: center; align-items: center; width: 50px; height: 50px;'
 
+// Small medium or large, small - 16x16, medium - 32x32, large - 64x64
 for(let i = 0; i < 256; i++) {
     let gridBox = document.createElement('div');
     gridBox.classList.add('gridbox')
-    gridBox.style.cssText = 'border: solid 2px black;width: 50px; height: 50px; box-sizing: border-box;';
+    gridBox.classList.add('whiteBG')
+    gridBox.style.cssText = ' border: solid 2px black; width: 50px; height: 50px; box-sizing: border-box;';
 
 
     mainCont.appendChild(gridBox);
@@ -25,6 +33,7 @@ const gridBoxes = document.querySelectorAll('.gridbox');
 
 gridBoxes.forEach((gridBox) => {
     gridBox.addEventListener('mouseover', () => {
+        gridBox.classList.remove('whiteBG');
         gridBox.classList.add('blackout');
     });
     // gridBox.addEventListener('mouseout', () => {
