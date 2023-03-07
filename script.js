@@ -11,11 +11,20 @@
 // Creating the grid for etch-a-sketch
 
 const mainCont = document.querySelector('.container');
+const colorPick = document.querySelector('.colorPicker')
+let myColor = '#000000'
 
 // const gridBox = document.createElement('div');
 
 // gridBox.textContent = 'This is a box!'
 //gridBox.style.cssText = 'justify-content: center; align-items: center; width: 50px; height: 50px;'
+
+
+
+colorPick.addEventListener('input', () => {
+    myColor = colorPick.value;
+});
+
 
 // Small medium or large, small - 16x16, medium - 32x32, large - 64x64
 for(let i = 0; i < 256; i++) {
@@ -34,7 +43,7 @@ const gridBoxes = document.querySelectorAll('.gridbox');
 gridBoxes.forEach((gridBox) => {
     gridBox.addEventListener('mouseover', () => {
         gridBox.classList.remove('whiteBG');
-        gridBox.classList.add('blackout');
+        gridBox.style.backgroundColor = `${myColor}`
     });
     // gridBox.addEventListener('mouseout', () => {
     //     gridBox.classList.remove('blackout');
